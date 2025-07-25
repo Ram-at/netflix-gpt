@@ -1,10 +1,11 @@
 
-import './App.css'
+
+import Body from './components/Body'
 
 function App() {
 
   return (
-    <div className='text-blue-900 text-9xl' >Hello World</div>
+   <Body/>
   )
 }
 
