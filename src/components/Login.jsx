@@ -8,11 +8,12 @@ import {
   updateProfile 
 } from "firebase/auth";
 import { auth } from "../utils/Firebase.jsx";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
+import { PROFILE_URL } from "../utils/constants.js";
 
 const Login = () => {
-  const navigate = useNavigate();
+ 
   const dispatch = useDispatch();
   const [isSignupPage, setIsSignupPage] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -41,11 +42,12 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName:  name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/166795990?s=400&u=71d53a6ac7094bef51758cac00b12993b9feb77a&v=4",
+            photoURL: {PROFILE_URL},
           })
-            .then(() => {
+            .then( () => {
               // Profile updated!
-              console.log(auth.currentUser)
+             
+               
               const {uid,email,displayName , photoURL} = auth.currentUser;
                 dispatch(addUser({uid:uid, email:email,displayName:displayName , photoURL:photoURL}))
             })
@@ -56,7 +58,7 @@ const Login = () => {
             });
 
           console.log(user);
-          navigate("/browse");
+         
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -73,7 +75,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
+         
           console.log(user);
           // ...
         })
