@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header.jsx";
 import { checkValidInfo } from "../utils/Validate.jsx";
 import {
@@ -42,7 +42,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName:  name.current.value,
-            photoURL: {PROFILE_URL},
+            photoURL: PROFILE_URL,
           })
             .then( () => {
               // Profile updated!
