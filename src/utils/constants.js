@@ -65,4 +65,5 @@ export const LANGUAGE_SUPPORTED = [
   { identifier: "fil", name: "Filipino" },
   { identifier: "is", name: "Icelandic" }
 ];
+export const OPENAI_KEY ="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
