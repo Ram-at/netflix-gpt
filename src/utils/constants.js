@@ -7,7 +7,7 @@ export const PROFILE_URL =
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2YzI4Y2I4NTFlZWYxMjU3MzBkMjI0NjZkMDA4MTMwNiIsIm5iZiI6MTc1MzUxMjcxNi4zNDIwMDAyLCJzdWIiOiI2ODg0N2IwY2E2ODRiZjBlMzg3MmU1YWEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ahqBwke5L6eyz4wsseTDjmUtxONQhGUWIdRwgAS63iE'
+    Authorization: 'Bearer '+import.meta.env.VITE_FETCHAPI_KEY
   }
 };
 export  const IMAGE_CDN = "https://image.tmdb.org/t/p/w500/";
@@ -65,5 +65,5 @@ export const LANGUAGE_SUPPORTED = [
   { identifier: "fil", name: "Filipino" },
   { identifier: "is", name: "Icelandic" }
 ];
-export const OPENAI_KEY ="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export const OPENAI_KEY =import.meta.env.VITE_OPENAI_KEY
 
